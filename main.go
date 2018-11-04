@@ -12,9 +12,15 @@ type Rule struct {
 	Passed         bool
 }
 
-func GenerateRule(rules []Rule) Rule {
-	rule := rules[0]
+type DecisionModuleResult struct {
+	Passed bool
+}
 
-	fmt.Println(rule)
-	return rule
+func GenerateRule(rules []Rule) DecisionModuleResult {
+	passed := false
+	for _, rule := range rules {
+		fmt.Println(rule)
+	}
+	result := DecisionModuleResult{Passed: passed}
+	return result
 }
